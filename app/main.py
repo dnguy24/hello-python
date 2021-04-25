@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
     n = random.random() * 3
     time.sleep(n)
-    return "You waited for {} seconds!".format(n)
+    return "You waited for {} seconds!".format(n), 400
 
 def create_app():
     return app
