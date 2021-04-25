@@ -1,9 +1,17 @@
 from flask import Flask
+import random
+import time
+
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello from Python!"
+    n = random.random() * 3
+    time.sleep(n)
+    return "You waited for {} seconds!".format(n)
+
+def create_app():
+    return app
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
